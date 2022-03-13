@@ -12,12 +12,3 @@ class SongAdmin(admin.ModelAdmin):
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
     listdisplay = ['movie_name']
-
-# class SongAdmin(admin.StackedInline):
-#     model = Song
-
-# @admin.register(Singer)
-# class SingerAdmin(admin.ModelAdmin):
-#     inlines = [SongAdmin ]
-
-# admin.site.register(Song)
