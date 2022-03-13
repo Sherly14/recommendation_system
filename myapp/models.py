@@ -7,18 +7,18 @@ class BaseModel(models.Model):
     class Meta:
         abstract = True
 
-class Singer(BaseModel): # Model 1
+class Singer(BaseModel):
     singer_name = models.CharField(max_length=100)
     def __str__(self):
         return self.singer_name
 
-class Song(BaseModel): # Model 2
+class Song(BaseModel):
     singer_name = models.ManyToManyField(Singer,related_name='singer_name1')
     song_name = models.CharField(max_length=100)
     def __str__(self):
         return self.song_name
 
-class Movie(BaseModel): # Model 3
+class Movie(BaseModel):
     movie_name = models.CharField(max_length=100)
     song_name = models.ManyToManyField(Song)
     def __str__(self):
